@@ -42,7 +42,7 @@ pub fn TimerControls(props: &Props) -> Html {
         Callback::from(move |_| {
             timer_state.set(TimerState::Paused);
             timer_duration.set(0);
-            session_length.set(25 * 60); // Reset to 25 minute session time
+            session_length.set(45 * 60); // Reset to 25 minute session time
         })
     };
 
@@ -54,7 +54,7 @@ pub fn TimerControls(props: &Props) -> Html {
         Callback::from(move |_| {
             timer_state.set(TimerState::Break);
             timer_duration.set(0);
-            session_length.set(5 * 60); // 5 minute break time
+            session_length.set(10 * 60); // 5 minute break time
         })
     };
 
@@ -66,7 +66,7 @@ pub fn TimerControls(props: &Props) -> Html {
         Callback::from(move |_| {
             timer_state.set(TimerState::Running);
             timer_duration.set(0);
-            session_length.set(25 * 60); // Reset state to 25 minutes
+            session_length.set(45 * 60); // Reset state to 25 minutes
         })
     };
 

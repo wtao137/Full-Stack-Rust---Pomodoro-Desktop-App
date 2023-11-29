@@ -53,7 +53,7 @@ fn get_tray_title(timer_state: TimerState, timer_duration: u32, session_length: 
 
 #[function_component(App)]
 pub fn app() -> Html {
-    let session_length = use_state(|| 25 * 60);
+    let session_length = use_state(|| 45 * 60);
     let timer_duration = use_state(|| 0);
     let timer_state = use_state(|| TimerState::Paused);
 
