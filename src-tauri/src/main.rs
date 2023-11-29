@@ -4,12 +4,12 @@
 use tauri::{AppHandle, Manager, SystemTray, SystemTrayEvent};
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-async fn set_title(app_handle: tauri::AppHandle, title: String) {
-    if let Err(e) = app_handle.tray_handle().set_title(&title) {
-        eprintln!("error updating timer: {}", e);
-    }
-}
+// #[tauri::command]
+// async fn set_title(app_handle: tauri::AppHandle, title: String) {
+//     if let Err(e) = app_handle.tray_handle().set_title(&title) {
+//         eprintln!("error updating timer: {}", e);
+//     }
+// }
 
 fn main() {
     let tray = SystemTray::new();
@@ -34,8 +34,7 @@ fn main() {
                 window.show().unwrap();
             }
             _ => {}
-        })
-        .invoke_handler(tauri::generate_handler![set_title])
+        }) // .invoke_handler(tauri::generate_handler![set_title])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
