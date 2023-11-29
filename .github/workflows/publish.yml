@@ -36,6 +36,9 @@ jobs:
       - name: install frontend dependencies
         run: | 
           yarn install
+          npm install -D tailwindcss
+          cargo install --locked trunk
+          rustup target add wasm32-unknown-unknown
           npx tailwindcss -i ./src/input.css -o ./output.css
         # change this to npm or pnpm depending on which one you use
       - uses: tauri-apps/tauri-action@v0
